@@ -13,7 +13,7 @@ logger = getLogger()
 class Tokenizer:
     def __init__(self, model_path: str):
         # reload tokenizer
-        assert os.path.isfile(model_path), model_path
+        assert os.path.isfile(model_path), model_path, "Tokenizer not found in your directory"
         self.sp_model = SentencePieceProcessor(model_file=model_path)
         logger.info(f"Reloaded SentencePiece model from {model_path}")
 
